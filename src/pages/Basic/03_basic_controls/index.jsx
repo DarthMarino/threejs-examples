@@ -11,10 +11,10 @@ const RedCube = () => {
     const scene = new THREE.Scene();
 
     // Create camera
-    let camera = new THREE.PerspectiveCamera(
+    const camera = new THREE.PerspectiveCamera(
       75,
       window.innerWidth / getInnerHeight(),
-      0.1,
+      1,
       1000
     );
 
@@ -32,7 +32,7 @@ const RedCube = () => {
     scene.add(cube);
 
     // Set camera position
-    camera.position.z = 5;
+    camera.position.z = 2;
 
     // Create resize listener
     let onWindowResize = function () {
@@ -43,6 +43,27 @@ const RedCube = () => {
       renderer.render(scene, camera);
     };
 
+    const cursor = {
+      x: 0,
+      y: 0,
+    };
+
+    window.addEventListener("mousemove", (event) => {
+      cursor.x = event.clientX / window.innerWidth - 0.5;
+      cursor.y = event.clientY / getInnerHeight() - 0.5;
+    });
+
+    // Cursor
+    let moveCamera = function () {
+      camera.position.x = Math.sin(cursor.x * Math.PI * 2) * 2;
+      camera.position.z = Math.cos(cursor.x * Math.PI * 2) * 2;
+      camera.position.y = cursor.y * 3;
+      camera.lookAt(scene.position);
+      renderer.resetState();
+      renderer.render(scene, camera);
+    };
+
+    window.addEventListener("mousemove", moveCamera, false);
     window.addEventListener("resize", onWindowResize, false);
     renderer.render(scene, camera);
   }, []);
@@ -56,8 +77,8 @@ const RedCube = () => {
   );
 };
 
-const BasicScene = () => {
+const BasicControls = () => {
   return <RedCube />;
 };
 
-export default BasicScene;
+export default BasicControls;

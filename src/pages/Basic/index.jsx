@@ -9,7 +9,21 @@ const Basic = () => {
           pathname: "/basic/01_basic_scene",
         }}
       >
-        <button>basic scene</button>
+        <button>Basic Scene</button>
+      </Link>
+      <Link
+        to={{
+          pathname: "/basic/02_basic_transform",
+        }}
+      >
+        <button>Basic Transform</button>
+      </Link>
+      <Link
+        to={{
+          pathname: "/basic/03_basic_controls",
+        }}
+      >
+        <button>Basic Controls</button>
       </Link>
     </div>
   );

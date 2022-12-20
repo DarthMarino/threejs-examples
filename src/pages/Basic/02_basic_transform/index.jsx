@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
+import gsap from "gsap";
 
 // Create component to return red cube in a canvas
 const RedCube = () => {
@@ -34,7 +35,7 @@ const RedCube = () => {
     // Set camera position
     camera.position.z = 5;
 
-    // Create resize listener
+    // Create Resize function
     let onWindowResize = function () {
       camera.aspect = window.innerWidth / getInnerHeight();
       camera.updateProjectionMatrix();
@@ -42,6 +43,20 @@ const RedCube = () => {
       renderer.resetState();
       renderer.render(scene, camera);
     };
+
+    /**
+     * Animate
+     */
+    gsap.to(cube.position, { duration: 1, delay: 1, x: 2 });
+    const tick = () => {
+      // Render
+      renderer.render(scene, camera);
+
+      // Call tick again on the next frame
+      window.requestAnimationFrame(tick);
+    };
+
+    tick();
 
     window.addEventListener("resize", onWindowResize, false);
     renderer.render(scene, camera);
@@ -56,8 +71,8 @@ const RedCube = () => {
   );
 };
 
-const BasicScene = () => {
+const BasicTransform = () => {
   return <RedCube />;
 };
 
-export default BasicScene;
+export default BasicTransform;

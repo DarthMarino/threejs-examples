@@ -2,12 +2,9 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import reactLogo from "../assets/react.svg";
 import viteLogo from "../assets/vite.svg";
-import "./home.css";
 export default function Home() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="App">
+    <div>
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -16,10 +13,9 @@ export default function Home() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>Three JS Training</h1>
       <div className="card">
         <Link to="/basic">
-          {" "}
           <button>Basic Module</button>
         </Link>
       </div>
