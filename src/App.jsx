@@ -1,4 +1,3 @@
-import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Basic from "./pages/Basic/index.jsx";
 import BasicScene from "./pages/Basic/01_basic_scene/index.jsx";
@@ -9,6 +8,7 @@ import Home from "./pages/index.jsx";
 import Layout from "./pages/layout.jsx";
 import ClassicTechniques from "./pages/ClassicTechniques/index.jsx";
 import LightsScene from "./pages/ClassicTechniques/01_lights/index.jsx";
+import ControlsScene from "./pages/ClassicTechniques/02_controls/index.jsx";
 
 export default function App() {
   return (
@@ -24,6 +24,10 @@ export default function App() {
           <Route
             path="classic_techniques/01_lights"
             element={<LightsScene />}
+          />
+          <Route
+            path="classic_techniques/02_controls"
+            element={<ControlsScene />}
           />
         </Route>
       </Routes>
