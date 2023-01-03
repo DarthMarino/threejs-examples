@@ -17,6 +17,11 @@ const Layout = () => {
           <li>
             <Link to={{ pathname: "basic" }}>Basics</Link>
           </li>
+          <li>
+            <Link to={{ pathname: "classic_techniques" }}>
+              Classic Techniques
+            </Link>
+          </li>
         </ul>
       </nav>
       <Outlet />

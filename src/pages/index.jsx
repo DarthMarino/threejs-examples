@@ -18,6 +18,9 @@ export default function Home() {
         <Link to="/basic">
           <button>Basic Module</button>
         </Link>
+        <Link to="/classic_techniques">
+          <button>Classic Techniques</button>
+        </Link>
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
