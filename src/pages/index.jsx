@@ -21,6 +21,9 @@ export default function Home() {
         <Link to="/classic_techniques">
           <button>Classic Techniques</button>
         </Link>
+        <Link to="/examples">
+          <button>Examples</button>
+        </Link>
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
