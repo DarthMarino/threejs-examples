@@ -9,6 +9,8 @@ import Layout from "./pages/layout.jsx";
 import ClassicTechniques from "./pages/ClassicTechniques/index.jsx";
 import LightsScene from "./pages/ClassicTechniques/01_lights/index.jsx";
 import ControlsScene from "./pages/ClassicTechniques/02_controls/index.jsx";
+import Examples from "./pages/Examples/index.jsx";
+import PortalScene from "./pages/Examples/01_portal/index.jsx";
 
 export default function App() {
   return (
@@ -29,6 +31,8 @@ export default function App() {
             path="classic_techniques/02_controls"
             element={<ControlsScene />}
           />
+          <Route path="examples" element={<Examples />} />
+          <Route path="examples/01_portal" element={<PortalScene />} />
         </Route>
       </Routes>
     </BrowserRouter>
